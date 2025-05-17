@@ -1,8 +1,20 @@
 
 
-<div class="max-w-xl mx-auto">
+<div class="max-w-xl mx-auto my-10">
     <h2 class="text-xl font-bold text-center">Cattle List</h2>
     @for(cattle of cattleList(); track cattle.id) {
-        {{ cattle.type }}
+        <div class="my-4 border rounded-md w-full p-4">
+            <div class="flex flex-col items-start">
+                <h3 class="text-base font-semibold capitalize text-teal-900">
+                    {{ cattle.type }}
+                </h3>
+                <span class="text-sm">Weight: {{ cattle.weight }} Kg</span>
+                <span class="text-sm">Size: {{ cattle.size }} cm</span>
+                <p class="">tk: <span class="text-lg font-semibold">{{ cattle.price }}</span></p>
+            </div>
+            <div class="flex justify-end items-center my-3">
+                <button class="btn-primary font-semibold">Buy now</button>
+            </div>
+        </div>
     }
 </div>
