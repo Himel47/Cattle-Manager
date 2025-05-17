@@ -11,7 +11,7 @@ export class ListingService {
   constructor(private http: HttpClient) { }
 
   getCattleList(): Observable<CattleInfo[]> {
-    const url = 'localhost:3000/cattle'
+    const url = 'http://localhost:3000/cattle'
     return this.http.get<CattleInfo[]>(url);
   }
 }
