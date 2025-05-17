@@ -2,4 +2,18 @@
 
 <div class="text-[#fff] py-5 flex justify-between items-center max-w-6xl mx-auto">
     <span class="font-bold text-lg italic">Cattle</span>
+    @if(isLoggedIn()) {
+        <div class="flex items-center gap-3">
+            <span>
+                Hello User
+            </span>
+            <button
+                class="btn-cancel font-semibold"
+                (click)="onClickLogout()">
+                Logout
+            </button>
+        </div>
+    } @else {
+        <span class=""></span>
+    }
 </div>

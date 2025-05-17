@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { LoginService } from './services/login.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
+export const IsLoggedIn = signal(false);
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -43,6 +45,7 @@ export class LoginComponent implements OnInit {
   });
   previousLoginCred = signal({} as LoginInfo);
   errorText = '';
+  isLoggedIn = signal(IsLoggedIn());
 
   controlUserName = computed(
     ()=> this.loginForm.controls.userName as FormControl<string>
@@ -56,8 +59,10 @@ export class LoginComponent implements OnInit {
     if(this.loginForm.valid) {
       if(this.controlUserName().value === this.previousLoginCred().username && this.controlPassword().value === this.previousLoginCred().password){
         this.errorText = ''
+        IsLoggedIn.set(true);
         this.router.navigate(['/cattle-list'], { queryParams: {}});
       } else {
+        IsLoggedIn.set(false);
         this.errorText = 'Credentials Not Matched!'
       }
     }
