@@ -1,0 +1,36 @@
+{
+    "cattle": [
+        {
+            "type": "deshi",
+            "id": 1,
+            "size": 150,
+            "weight": 11,
+            "price": 12000
+        },
+        {
+            "type": "hybrid",
+            "id": 2,
+            "size": 135,
+            "weight": 13.5,
+            "price": 16000
+        },
+        {
+            "type": "Ram Chagol",
+            "id": 3,
+            "size": 110,
+            "weight": 9,
+            "price": 7500
+        },
+        {
+            "type": "deshi",
+            "id": 4,
+            "size": 167,
+            "weight": 21,
+            "price": 19500
+        }
+    ],
+    "loginCred": {
+        "userName": "admin",
+        "password": "1234"
+    }
+}

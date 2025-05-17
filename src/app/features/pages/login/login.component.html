@@ -1,0 +1,40 @@
+
+
+<div class="container">
+    <div class="flex justify-center items-center max-w-80 mx-auto">
+        <div class="border border-orange-900 rounded-lg text-center p-10">
+            <h2 class="text-xl mb-5 font-bold">Login</h2>
+            <form
+                [formGroup]="loginForm"
+                class="flex flex-col items-start">
+                <label for="name" class="font-bold text-base">User Name</label>
+                <input
+                    name="name"
+                    type="text"
+                    class="border-gray-500 rounded px-2 py-1.5 my-1.5"
+                    [formControl]="controlUserName()"
+                    maxlength="25">
+                @if(controlUserName().dirty && controlUserName().invalid) {
+                    <span class="text-red-500">Provide Valid Username!</span>
+                }
+                
+                <label for="pass" class="font-bold text-base">Password</label>
+                <input
+                    name="pass"
+                    type="password"
+                    class="border-gray-500 rounded px-2 py-1.5 my-1.5"
+                    [formControl]="controlPassword()"
+                    maxlength="8">
+                @if(controlPassword().dirty && controlPassword().invalid) {
+                    <span class="text-red-500">Provide Valid Password!</span>
+                }
+            </form>
+            <button
+                class="btn-success mt-3"
+                (click)="onClickLoginBtn()"
+                [disabled]="loginForm.invalid">
+                Login
+            </button>
+        </div>
+    </div>
+</div>
